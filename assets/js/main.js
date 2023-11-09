@@ -13,7 +13,7 @@ const person =
     alter: 54,
     sagNameAlter: () =>
     {
-        window.alert(`Hallo mein Name ist ${person.name} und ich bin ${person.alter} Jahre alt`);
+        // window.alert(`Hallo mein Name ist ${person.name} und ich bin ${person.alter} Jahre alt`);
     }
 }
 
@@ -247,7 +247,7 @@ console.log("%c leve 2_3 und 2_4", "color: blue; background-color: gold");
 
 const tableContainer = document.body.querySelector("#table-container");
 const rowTitleContainer = document.body.querySelector("#row-title-container");
-tableContainer.innerHTML = '<table style="width: 70%" id="tableOutput"></table>'
+tableContainer.innerHTML = '<table style="width: 58%" id="tableOutput"></table>'
 
 const tableOutput = document.body.querySelector('#tableOutput');
 
@@ -256,29 +256,27 @@ const rowTitel = Object.keys(singers[0]);
 const showRowTitel = () => 
 {
     rowTitleContainer.innerHTML += `
-    <table style="width: 60%">
+    <table width="45%">
         <tr>
-            <th id="sortName">${rowTitel[0]}</th>
-            <th id="sortCountry">${rowTitel[1]}</th>
+            <th  align="left" id="sortName">${rowTitel[0]}</th>
+            <th align="center" id="sortCountry">${rowTitel[1]}</th>
             <th>${rowTitel[2]}</th>
-            <th id="sortGenre">${rowTitel[3]}</th> 
+            <th  id="sortGenre">${rowTitel[3]}</th> 
         </tr>
     </table>`
-}
+};
 
 showRowTitel();
 
 const showSingers = (array) =>
     array.forEach((band) => {
     tableOutput.innerHTML += `
-    <tr>
-        <tr>
+        <tr align="left">
             <td>${band.name}</td>
             <td>${band.country}</td>
             <td>${band.period_active.start} - ${band.period_active.end}</td>
             <td>${band.genre}</td>
         </tr>
-    </tr>    
     </table>`
 });
 
