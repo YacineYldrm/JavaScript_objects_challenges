@@ -222,7 +222,7 @@ const changes = edelMetallPreise.map((elt) =>
 }); 
 
 console.log(changes);
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const moreThan50 = edelMetallPreise.filter((elt) => elt.preiseGramEuro > 50 ? elt : null);
 console.log(moreThan50);
 
@@ -247,16 +247,16 @@ console.log("%c leve 2_3 und 2_4", "color: blue; background-color: gold");
 
 // document.body.innerHTML = `<h1>Singers</h1> <div id="table-container"></div>`;
 
-const singers2 = [
-    { name: 'The Beatles', country: 'United Kingdom', period_active: { start: 1960, end: 1970 }, genre: "Rock / Pop" }, 
-    { name: 'Elvis Presley', country: 'United States', period_active: { start: 1954, end: 1977 }, genre: "Rock and roll" },
-	{ name: 'Michael Jackson', country: 'United States', period_active: { start: 1964, end: 2009 }, genre: "Pop / Rock / Dance / Soul / R&B"},
-	{ name: 'Elton John', country: 'United Kingdom', period_active: { start: 1964, end: "present" }, genre: "Pop / Rock"},
-	{ name: 'Madonna', country: 'United States', period_active: { start: 1979, end: "present" }, genre: "Pop / Dance / Electronica"},
-	{ name: 'Led Zeppelin', country: 'United Kingdom', period_active: { start: 1968, end: 1980 }, genre: "Hard rock / Blues rock / Folk rock"},
-	{ name: 'Rihanna', country: 'United States', period_active: { start: 2005, end: "present" }, genre: "R&B / Pop / Dance / Hip-hop"},
-	{ name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock"},
-];
+// const singers2 = [
+//     { name: 'The Beatles', country: 'United Kingdom', period_active: { start: 1960, end: 1970 }, genre: "Rock / Pop" }, 
+//     { name: 'Elvis Presley', country: 'United States', period_active: { start: 1954, end: 1977 }, genre: "Rock and roll" },
+// 	{ name: 'Michael Jackson', country: 'United States', period_active: { start: 1964, end: 2009 }, genre: "Pop / Rock / Dance / Soul / R&B"},
+// 	{ name: 'Elton John', country: 'United Kingdom', period_active: { start: 1964, end: "present" }, genre: "Pop / Rock"},
+// 	{ name: 'Madonna', country: 'United States', period_active: { start: 1979, end: "present" }, genre: "Pop / Dance / Electronica"},
+// 	{ name: 'Led Zeppelin', country: 'United Kingdom', period_active: { start: 1968, end: 1980 }, genre: "Hard rock / Blues rock / Folk rock"},
+// 	{ name: 'Rihanna', country: 'United States', period_active: { start: 2005, end: "present" }, genre: "R&B / Pop / Dance / Hip-hop"},
+// 	{ name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock"},
+// ];
 
 const tableContainer = document.body.querySelector("#table-container");
 const rowTitleContainer = document.body.querySelector("#row-title-container");
@@ -264,7 +264,7 @@ tableContainer.innerHTML = '<table style="width: 70%" id="tableOutput"></table>'
 
 const tableOutput = document.body.querySelector('#tableOutput');
 
-const rowTitel = Object.keys(singers2[0]);
+const rowTitel = Object.keys(singers[0]);
 
 const showRowTitel = () => 
 {
@@ -295,24 +295,24 @@ const showSingers = (array) =>
     </table>`
 });
 
-showSingers(singers2);
+showSingers(singers);
 
 const sortName = document.body.querySelector('#sortName');
 
 sortName.addEventListener('click', () => {
-    const sortedNames = singers2.sort((elt1, elt2) => elt1.name > elt2.name ? 1 : -1);
+    const sortedNames = singers.sort((elt1, elt2) => elt1.name > elt2.name ? 1 : -1);
     tableOutput.innerHTML = "";
     showSingers(sortedNames);
 });
 
 sortCountry.addEventListener('click', () => {
-    const sortedCountrys = singers2.sort((elt1, elt2) => elt1.country > elt2.country ? 1 : -1);
+    const sortedCountrys = singers.sort((elt1, elt2) => elt1.country > elt2.country ? 1 : -1);
     tableOutput.innerHTML = "";
     showSingers(sortedCountrys);
 });
 
 sortGenre.addEventListener('click', () => {
-    const sortedGenre = singers2.sort((elt1, elt2) => elt1.genre > elt2.genre ? 1 : -1);
+    const sortedGenre = singers.sort((elt1, elt2) => elt1.genre > elt2.genre ? 1 : -1);
     tableOutput.innerHTML = "";
     showSingers(sortedGenre);
 });
@@ -323,7 +323,7 @@ const searchInput = document.body.querySelector('#searchInput');
 const searchBtn = document.body.querySelector('#searchBtn');
 
 searchBtn.addEventListener('click', () => {
-    const showName = singers2.filter((elt) => {
+    const showName = singers.filter((elt) => {
         if(elt.name.toLowerCase().includes(searchInput.value.toLowerCase()))
         {
             return elt;
