@@ -221,7 +221,7 @@ const changes = edelMetallPreise.map((elt) =>
     return elt.veraenderung;
 }); 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 console.log(changes);
 const moreThan50 = edelMetallPreise.filter((elt) => elt.preiseGramEuro > 50 ? elt : null);
 console.log(moreThan50);
