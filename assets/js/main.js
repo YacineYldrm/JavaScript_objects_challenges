@@ -13,7 +13,7 @@ const person =
     alter: 54,
     sagNameAlter: () =>
     {
-        // window.alert(`Hallo mein Name ist ${person.name} und ich bin ${person.alter} Jahre alt`);
+        window.alert(`Hallo mein Name ist ${person.name} und ich bin ${person.alter} Jahre alt`);
     }
 }
 
@@ -222,7 +222,6 @@ const changes = edelMetallPreise.map((elt) =>
 }); 
 
 console.log(changes);
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const moreThan50 = edelMetallPreise.filter((elt) => elt.preiseGramEuro > 50 ? elt : null);
 console.log(moreThan50);
 
